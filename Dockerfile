@@ -27,6 +27,7 @@ WORKDIR /app
 # copy binary from builder to the runner image
 COPY --from=builder /build/hodor .
 
+ENV PORT=${PORT}
 EXPOSE ${PORT}
 
 CMD ["./hodor"]

@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hodor
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hodor
+  template:
+    metadata:
+      labels:
+        app: hodor
+    spec:
+      containers:
+        - name: hodor
+          image: docker.io/crtrojan23/hodor:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: HOST_ADDR
+              valueFrom:
+                configMapKeyRef:
+                  name: hodor-config 
+                  key: HOST_ADDR

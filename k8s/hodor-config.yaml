@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hodor-config
+data:
+  HOST_ADDR: "0.0.0.0:8888"
+
