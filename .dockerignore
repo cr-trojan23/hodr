@@ -1,0 +1,11 @@
+.git/
+.github/
+
+# ignore the k8s directory as it doesn't need to be in the image
+k8s/
+
+# following files are not needed in the image
+LICENSE
+README.md
+.env
+.gitignore
