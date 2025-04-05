@@ -15,6 +15,13 @@ spec:
       containers:
         - name: hodor
           image: docker.io/crtrojan23/hodor:latest
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "200m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
           ports:
             - containerPort: 8080
           env:
